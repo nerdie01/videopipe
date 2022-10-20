@@ -29,7 +29,7 @@ def handle_request(conn, addr):
             msg = struct.pack('Q', len(video))
             conn.sendall(msg)
 
-            cv2.imshow('Transmitting from {IP}:{PORT}', frame)
+            cv2.imshow(f'Transmitting from {IP}:{PORT}', frame)
             key = cv2.waitKey(1) & 0xFF
             if key == ord('q'):
                 conn.close()
